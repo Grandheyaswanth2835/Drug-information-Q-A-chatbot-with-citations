@@ -168,7 +168,7 @@ def answer_question(
 
     # Keep a failed or empty model response useful instead of returning only a
     # citation marker.
-    if not verified and hits:
+    if not re.sub(_CITE, "", verified).strip() and hits:
         verified = f"The label states: {_snippet(hits[0].text, limit=400)}"
 
     # If verification removed every citation, anchor to the top hit so the
