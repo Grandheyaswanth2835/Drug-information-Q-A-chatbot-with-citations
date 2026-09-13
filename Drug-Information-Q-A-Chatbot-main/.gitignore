@@ -1,0 +1,31 @@
+# THE ONE RULE: never commit real keys.
+# .env holds real values and must never be uploaded.
+# Commit .env.example instead, with fake values.
+.env
+.env.local
+*.key
+*.pem
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Node
+node_modules/
+dist/
+build/
+
+# Search index and answer log (rebuilt / recreated at runtime)
+data/index/
+# but keep the folder in git
+!data/index/.gitkeep
+
+# medicine PDFs are large / user-private; keep the folder, never the files
+# (covers per-user subfolders too, e.g. data/pdfs/user-101/*.pdf)
+data/pdfs/**
+!data/pdfs/.gitkeep
+
+# OS
+.DS_Store
